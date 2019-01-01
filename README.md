@@ -1,9 +1,9 @@
-﻿# react-native-flatlist-pull
+# react-native-flatlist-pull
 
   react-native-flatlist-pull是一个基于FlatList,支持Android和iOS的下拉刷新列表组件。是在另一个项目[react-native-pull](https://github.com/greatbsky/react-native-pull)的基础上进行修改而成。主要将原项目中已经过时的ListView替换成较新的FlatList，同时去掉了原项目中存在BUG的PullView。
 
-## `PullList` Usage
-  1. 使用npm：`npm install react-native-flatlist-pull@latest --save`
+## `PullList` 使用
+  1. 使用npm：`npm install react-native-flatlist-pull@latest --save`<br>
   使用yarn：`yarn add react-native-flatlist-pull`
   3. 编写代码:
   ```
@@ -28,7 +28,7 @@
   3. 完整demo代码:[Demo](https://github.com/fuxiang123/react-native-flatlist-pull/blob/master/demo.js)
 
 
-## `PullView` & `PullList`  configuration
+## 更多配置项
 
 **PullList 下拉效果属性**
 
