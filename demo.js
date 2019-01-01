@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   ActivityIndicator,
@@ -20,13 +19,13 @@ export default class extends Component {
     this.loadMore = this.loadMore.bind(this);
     this.topIndicatorRender = this.topIndicatorRender.bind(this);
     this.onPullRelease=this.onPullRelease.bind(this);
-    this.loadMore=this.loadMore.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.requestData(10);
   }
 
+  //自定义下拉刷新指示器
   topIndicatorRender(pulling, pullok, pullrelease) {
     const hide = {position: 'absolute', left: 10000};
     const show = {position: 'relative', left: 0};
@@ -49,13 +48,13 @@ export default class extends Component {
       <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: 60,zIndex:1}}>
         <ActivityIndicator size="small" color="red" />
         <View ref={(c) => {this.txtPulling = c;}}>
-          <Text style={styles.indicatorText}>继续下拉刷新...</Text>
+          <Text>继续下拉刷新...</Text>
         </View>
         <View ref={(c) => {this.txtPullok = c;}}>
-          <Text style={styles.indicatorText}>松开刷新......</Text>
+          <Text>松开刷新......</Text>
         </View>
         <View ref={(c) => {this.txtPullrelease = c;}}>
-          <Text style={styles.indicatorText}>刷新中......</Text>
+          <Text>刷新中......</Text>
         </View>
       </View>
     );
@@ -63,24 +62,24 @@ export default class extends Component {
 
   render() {
     return (
-        <PullList
-          //FlatList基本属性
-          data={this.state.data}
-          renderItem={({item,index})=>this.renderItem(item,index)}
-          keyExtractor={(item, index) => item.toString()}
+      <PullList
+        //FlatList基本属性
+        data={this.state.data}
+        renderItem={({item,index})=>this.renderItem(item,index)}
+        keyExtractor={(item, index) => item.toString()}
 
-          //FlatList上拉加载更多
-          ListFooterComponent={()=>this.ListFooterComponent()}
-          onEndReached={()=>this.loadMore()}
-          onEndReachedThreshold={0.2}
+        //FlatList上拉加载更多
+        ListFooterComponent={()=>this.ListFooterComponent()}
+        onEndReached={()=>this.loadMore()}
+        onEndReachedThreshold={0.1}
 
-          //PullList下拉刷新
-          onPullRelease={this.onPullRelease}
-          topIndicatorRender={this.topIndicatorRender}
-          topIndicatorHeight={60}
-          //控制下拉刷新状态的属性，为true时显示头部刷新组件，为false则隐藏
-          isRefreshing={this.state.isRefreshing}
-        />
+        //PullList下拉刷新
+        onPullRelease={this.onPullRelease}
+        topIndicatorRender={this.topIndicatorRender}
+        topIndicatorHeight={60}
+        //控制下拉刷新状态的属性，为true时显示头部刷新组件，为false则隐藏
+        isRefreshing={this.state.isRefreshing}
+      />
     );
   }
 
@@ -117,11 +116,11 @@ export default class extends Component {
     if(!this.state.isLoadMore) {
       this.setState({ isLoadMore: true });
       //do something
-      this.requestData(3);
       //真实情况下，应在请求网络数据后的回调中修改isLoadMore
       setTimeout(() => {
+        this.requestData(3);
         this.setState({ isLoadMore: false })
-      }, 2000);
+      }, 3000);
     }
   };
 
@@ -133,11 +132,3 @@ export default class extends Component {
   }
 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#F5FCFF',
-  },
-});

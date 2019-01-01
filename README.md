@@ -3,9 +3,9 @@
   react-native-flatlist-pull是一个基于FlatList,支持Android和iOS的下拉刷新列表组件。是在另一个项目[react-native-pull](https://github.com/greatbsky/react-native-pull)的基础上进行修改而成。主要将原项目中已经过时的ListView替换成较新的FlatList，同时去掉了原项目中存在BUG的PullView。
 
 ## `PullList` Usage
-  1. 使用npm：`npm install react-native-flatlist-pull@latest --save` 
-    使用yarn：`yarn add react-native-flatlist-pull`
-  2. 编写代码:
+  1. 使用npm：`npm install react-native-flatlist-pull@latest --save`
+  使用yarn：`yarn add react-native-flatlist-pull`
+  3. 编写代码:
   ```
     import {PullList} from 'react-native-pull';
 
@@ -16,17 +16,16 @@
         }, 3000);
     }
 	
-	
-       <PullList
-          onPullRelease={this.onRefresh}
-          // topIndicatorRender={this.topIndicatorRender}
-          topIndicatorHeight={60}
-          isRefreshing={shop.isRefreshing}
-		  
-		  {...and some FlatList Props}
-        />
+	<PullList
+	  onPullRelease={this.onPullRelease}
+	  // topIndicatorRender={this.topIndicatorRender}
+	  topIndicatorHeight={60}
+	  isRefreshing={this.state.isRefreshing}
+	  
+	  {...and some FlatList Props}
+	/>
   ```
-  3. 完整demo代码:暂无
+  3. 完整demo代码:[Demo](https://github.com/fuxiang123/react-native-flatlist-pull/blob/master/demo.js)
 
 
 ## `PullView` & `PullList`  configuration
@@ -42,7 +41,7 @@
   * **`isPullEnd`**: 是否已经下拉结束，若为true则隐藏顶部刷新指示组件，非必须
   * **`isRefreshing`**: 标示下拉刷新状态的属性，同react-native官网FlatList中的属性[refreshing](https://reactnative.cn/docs/flatlist/#refreshing)作用类似。为true显示头部刷新指示器，为false则隐藏头部刷新指示器
   
-**PullList 上拉加载更多，可直接使用官网FlatList的属性[onEndReached](https://reactnative.cn/docs/flatlist/#onendreached)与[onEndReachedThreshold](https://reactnative.cn/docs/flatlist/#onEndReachedThreshold)进行实现，详情请见[demo]()(暂无)**
+**PullList 上拉加载更多，可直接使用官网FlatList的属性[onEndReached](https://reactnative.cn/docs/flatlist/#onendreached)与[onEndReachedThreshold](https://reactnative.cn/docs/flatlist/#onEndReachedThreshold)进行实现，详情请见[demo](https://github.com/fuxiang123/react-native-flatlist-pull/blob/master/demo.js)**
   
 ## Licensed
   MIT License

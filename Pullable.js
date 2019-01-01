@@ -9,10 +9,9 @@ import {
   Easing,
   Dimensions,
   ActivityIndicator,
-  StyleSheet
+  StyleSheet,
+  Text
 } from 'react-native';
-import Text from "../../utils/TextAdapter"
-
 
 // const padding = 2; //scrollview与外面容器的距离
 const pullOkMargin = 100; //下拉到ok状态时topindicator距离顶部的距离

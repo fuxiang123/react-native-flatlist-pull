@@ -1,6 +1,6 @@
 {
   "name": "react-native-flatlist-pull",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "本项目是在react-native-pull的基础上进行修改而成，将原本项目中较过时的ListView换成最新的FlatList，同时去掉了原项目中的PullView",
   "main": "index.js",
   "scripts": {
