@@ -1,0 +1,24 @@
+{
+  "name": "react-native-flatlist-pull",
+  "version": "1.0.0",
+  "description": "本项目是在react-native-pull的基础上进行修改而成，将原本项目中较过时的ListView换成最新的FlatList，同时去掉了原项目中的PullView",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuxiang123/react-native-flatlist-pull.git"
+  },
+  "keywords": [
+    "react-native",
+    "flatlist",
+    "PullToRefresh"
+  ],
+  "author": "fuxiang123",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fuxiang123/react-native-flatlist-pull/issues"
+  },
+  "homepage": "https://github.com/fuxiang123/react-native-flatlist-pull#readme"
+}
