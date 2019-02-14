@@ -316,6 +316,6 @@ const styles = StyleSheet.create({
   },
   indicatorText:{
     fontSize:25,
-    marginLeft:px2dp(20)
+    marginLeft:10
   }
 });

@@ -104,7 +104,7 @@ export default class extends Component {
     const {isLoadMore}=this.state;
     if(isLoadMore) {
       return (
-        <View style={{ height: px2dp(80), alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
+        <View style={{ height: 40, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
           <ActivityIndicator size="small" color="red"/>
           <Text style={{ fontSize: 25, marginLeft: 5 }}>{'正在加载中……'}</Text>
         </View>
