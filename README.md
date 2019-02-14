@@ -25,7 +25,7 @@
 	  {...and some FlatList Props}
 	/>
   ```
-  3. 完整demo代码:[Demo](https://github.com/fuxiang123/react-native-flatlist-pull/blob/master/demo.js)
+  3. 完整示例代码:[Example](https://github.com/fuxiang123/react-native-flatlist-pull/blob/master/example/App.js)
 
 
 ## 更多配置项
@@ -41,7 +41,7 @@
   * **`isPullEnd`**: 是否已经下拉结束，若为true则隐藏顶部刷新指示组件，非必须
   * **`isRefreshing`**: 标示下拉刷新状态的属性，同react-native官网FlatList中的属性[refreshing](https://reactnative.cn/docs/flatlist/#refreshing)作用类似。为true显示头部刷新指示器，为false则隐藏头部刷新指示器
   
-**PullList 上拉加载更多，可直接使用官网FlatList的属性[onEndReached](https://reactnative.cn/docs/flatlist/#onendreached)与[onEndReachedThreshold](https://reactnative.cn/docs/flatlist/#onEndReachedThreshold)进行实现，详情请见[demo](https://github.com/fuxiang123/react-native-flatlist-pull/blob/master/demo.js)**
+**PullList 上拉加载更多，可直接使用官网FlatList的属性[onEndReached](https://reactnative.cn/docs/flatlist/#onendreached)与[onEndReachedThreshold](https://reactnative.cn/docs/flatlist/#onEndReachedThreshold)进行实现，详情请见[example](https://github.com/fuxiang123/react-native-flatlist-pull/blob/master/example/App.js)**
   
 ## Licensed
   MIT License
