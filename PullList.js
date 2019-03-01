@@ -26,13 +26,13 @@ import Pullable from './Pullable';
  */
 
 export default class extends Pullable {
-
   constructor(props) {
     super(props);
     this.getMetrics = this.getMetrics.bind(this);
     this.scrollToOffset = this.scrollToOffset.bind(this);
     this.scrollToEnd = this.scrollToEnd.bind(this);
-    this.listType='flat';
+    this.listType = 'flat';
+    this.listHeight=0;
   }
 
   getMetrics(args) {
@@ -47,12 +47,19 @@ export default class extends Pullable {
     this.scroll.scrollToEnd(args);
   }
 
+  onContentSizeChange(contentWidth, contentHeight){
+    this.listHeight=contentHeight;
+  }
+
   getScrollable() {
     return (
       <FlatList
-        ref={(c) => {this.scroll = c;}}
+        ref={(c) => {
+          this.scroll = c;
+        }}
         scrollEnabled={this.state.scrollEnabled}
         onScroll={this.onScroll}
+        onContentSizeChange={this.onContentSizeChange.bind(this)}
         {...this.props}
       />
     );
